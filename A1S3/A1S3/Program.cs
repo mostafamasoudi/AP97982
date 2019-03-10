@@ -46,7 +46,7 @@ namespace A1S3
         }
         public static string[] Q3_GetWordsOfTweet(string tweet)
         {
-            string [] words=tweet.Split('!','?','#','@',' ','"',',','.',';','،');
+            string [] words=tweet.Split('!','?','#','@',' ','"',',','.',';','،',':');
             return words;
         }
         public static int Q4_GetPopChargeOfTweet(string tweet,string[] posWords, string[]negWords)
