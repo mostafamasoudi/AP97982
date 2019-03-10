@@ -1,0 +1,19 @@
+AfsharMahnaz : mahnaz afshar : ejtemayi :+1
+alimotahari_ir : ali motahari : siyasi : -0.5
+azarijahromi : azarijahromi : ejtemayi : +1.2
+BBCBastani : hosein bastani : ejtemayi : +0.5
+BehnoudMasoud : masoud behnoud : siyasi : +0.4
+Eshaq_jahangiri : eshaq jahangiri : siyasi : +0.1
+HaddadAdel_ir : hadad adel : ejtemayi : +1.5
+hesamodin1 : hesamodin ashna : siyasi : +0.5
+ir_aref : mohamadreza aref : ejtemayi : +0.7
+ir_rezaee : mohsen rezaee : ejtemayi : -1.2
+IsraelPersian : vezarat khareje isareil : siyasi : +0.4
+Jedaaal : ali alizadeh : siyasi : +0.9
+Khamenei_fa : khameneyi : siyasi : -1
+mah_sadeghi : mahmod sadeghi : siyasi :+1
+MohajeraniSayed : ataolah mohajerani : siyasi : +0.1
+mostafatajzade : mostafa tajzade : siyasi : -1.5
+Rouhani_ir : hasan rouhani : ejtemayi : -1
+t_alidoosti : taraneh alidoosti : shakhsi : -0.3
+USAdarFarsi : vezarat khareje usa : ejtemayi :-1
