@@ -8,31 +8,87 @@ namespace A3
 {
     public class Shop
     {
-        public string Name;
-        public List<Customer> Customers;
+        string _Name;
+        List<Customer> _Customers;
+        public string Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentNullException();
+                else
+                    _Name = value;
+            }
+        }
+        public List<Customer> Customers
+        {
+            get
+            {
+                return _Customers;
+            }
+            set
+            {
+                if (value == null)
+                    throw new ArgumentNullException();
+                else
+                    _Customers = value;
+            }
+        }
 
         public Shop(string name, List<Customer> customers)
         {
-            //TODO
+            this.Name = name;
+            this.Customers = customers;
         }
 
 
         public List<City> CitiesCustomersAreFrom()
         {
-            //TODO
-            return null;
+            List<City> listofcity = new List<City>();
+            for(int i=0;i<Customers.Count;i++)
+            {
+                bool flag = false;
+                for(int j=0;j<listofcity.Count;j++)
+                {
+                    if (Customers[i].City == listofcity[j])
+                        flag = true;
+                }
+                if (!flag)
+                    listofcity.Add(Customers[i].City);
+            }
+            return listofcity;
         }
 
         public List<Customer> CustomersFromCity(City city)
         {
-            //TODO
-            return null;
+            List<Customer> customersfromcity = new List<Customer>();
+            for(int i=0;i<Customers.Count;i++)
+            {
+                if (Customers[i].City == city)
+                    customersfromcity.Add(Customers[i]);
+            }
+            return customersfromcity;
         }
 
         public List<Customer> CustomersWithMostOrders()
         {
-            //TODO
-            return null;
+            List<Customer> customerswithmostorderds = new List<Customer>();
+            int MaxOrder = 0;
+            for(int i=0;i<Customers.Count;i++)
+            {
+                if (Customers[i].Orders.Count > MaxOrder)
+                    MaxOrder = Customers[i].Orders.Count;
+            }
+            for (int i = 0; i < Customers.Count; i++)
+            {
+                if (Customers[i].Orders.Count == MaxOrder)
+                    customerswithmostorderds.Add(Customers[i]); 
+            }
+            return customerswithmostorderds;
         }
     }
 }
