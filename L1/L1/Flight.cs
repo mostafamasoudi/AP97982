@@ -15,8 +15,14 @@ namespace ConsoleApp1
         //Source: string
         //Destination: string
         //FlyDate: DateTime
+        public string FlightID;
+        public Airline Airline;
+        public int Capacity;
+        public string Source;
+        public string Destination;
+        public DateTime FlyDate;
 
-
+        
         /// <summary>
         /// set properties and add the object to DB
         /// </summary>
@@ -29,13 +35,21 @@ namespace ConsoleApp1
         public Flight(string id, Airline airline, int capacity, string source, string dest,
             DateTime dateTime)
         {
-            //TODO
+            this.FlightID = id;
+            this.Airline = airline;
+            this.Capacity = capacity;
+            this.Source = source;
+            this.Destination = dest;
+            this.FlyDate = dateTime;
+            DB.AddFlight(this);
         }
 
         public bool IsFull()
         {
-            //TODO
-            throw new NotImplementedException();
+            if (Capacity <= 0)
+                return true;
+            else
+                return false;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace ConsoleApp1
 
         public double Account;
 
-        public User(string fullName, string nationalID, string phoneNumber, double account)
+        public User(string fullName, string nationalID, string phoneNumber, double account=0)
         {
             FullName = fullName;
             NationalID = nationalID;
@@ -35,8 +35,12 @@ namespace ConsoleApp1
         /// <param name="ticket"></param>
         public void Reserve(Ticket ticket)
         {
-            //TODO
-            throw new NotImplementedException();
+            if (!ticket.IsSold())
+            {
+                ticket.Buyer = this;
+                ticket.Flight.Capacity--;
+                this.Account -= ticket.Price;
+            }
         }
 
         /// <summary>
@@ -47,8 +51,7 @@ namespace ConsoleApp1
         /// <param name="ticket"></param>
         public void Cancel(Ticket ticket)
         {
-            //TODO
-            throw new NotImplementedException();
+            this.Account += ticket.Price * 40 / 100;
         }
 
         /// <summary>
@@ -59,7 +62,15 @@ namespace ConsoleApp1
         /// <returns></returns>
         public List<Ticket> DateFilteredTickets(DateTime startDateTime, DateTime endDateTime)
         {
-            throw new NotImplementedException();
+            List<Ticket> dateFilteredTickets = new List<Ticket>();
+            for (int i=0;i<Tickets.Count;i++)
+            {
+                if (Tickets[i].Flight.FlyDate >= startDateTime && Tickets[i].Flight.FlyDate <= endDateTime)
+                {
+                    dateFilteredTickets.Add(Tickets[i]);
+                }
+            }
+            return dateFilteredTickets;
         }
 
         /// <summary>
@@ -78,7 +89,13 @@ namespace ConsoleApp1
         /// <returns></returns>
         public List<Ticket> AirlineTickets(Airline airline)
         {
-            throw new NotImplementedException();
+            List<Ticket> airlinetickets = new List<Ticket>();
+            for(int i=0;i<Tickets.Count;i++)
+            {
+                if (Tickets[i].Flight.Airline == airline)
+                    airlinetickets.Add(Tickets[i]);
+            }
+            return airlinetickets;
         }
 
         /// <summary>
@@ -87,9 +104,15 @@ namespace ConsoleApp1
         /// <param name="source"></param>
         /// <param name="dest"></param>
         /// <returns></returns>
-        public List<Ticket> AirlineTickets(string source, string dest)
+        public List<Ticket> RouteTickets(string source, string dest)
         {
-            throw new NotImplementedException();
+            List<Ticket> routetickets = new List<Ticket>();
+            for (int i = 0; i < Tickets.Count; i++)
+            {
+                if (Tickets[i].Flight.Source == source && Tickets[i].Flight.Destination == dest)
+                    routetickets.Add(Tickets[i]);
+            }
+            return routetickets;
         }
 
     }

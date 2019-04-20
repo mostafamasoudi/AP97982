@@ -62,7 +62,17 @@ namespace ConsoleApp1
         /// <returns></returns>
         public static Ticket MostExpensiveTicket()
         {
-            throw new NotImplementedException();
+            double MaxPrice = 0;
+            int ID_MaxPrice = -1;
+            for(int i=0;i<Tickets.Count;i++)
+            {
+                if (Tickets[i].Price > MaxPrice)
+                {
+                    MaxPrice = Tickets[i].Price;
+                    ID_MaxPrice = i;
+                }
+            }
+            return Tickets[ID_MaxPrice];
         }
 
         /// <summary>
@@ -71,7 +81,32 @@ namespace ConsoleApp1
         /// <returns></returns>
         public static Airline FavouriteAirline()
         {
-            throw new NotImplementedException();
+            List<int> count = new List<int>(Airlines.Count) { };
+            for (int i = 0; i < Tickets.Count;i++)
+            {
+                if (Tickets[i].IsSold())
+                {
+                    for(int j=0;j<Airlines.Count;j++)
+                    {
+                        if (Airlines[j] == Tickets[i].Flight.Airline)
+                        {
+                            count[j]++;
+                            break;
+                        }
+                    }
+                }  
+            }
+            int maxvalue = 0;
+            int idofmaxvalue = -1;
+            for(int i=0;i<count.Count;i++)
+            {
+                if(count[i]>=maxvalue)
+                {
+                    maxvalue = count[i];
+                    idofmaxvalue = i;
+                }
+            }
+            return Airlines[idofmaxvalue];
         }
 
         /// <summary>
@@ -80,7 +115,35 @@ namespace ConsoleApp1
         /// <returns></returns>
         public static double UsersDebts()
         {
-            throw new NotImplementedException();
+            double usersdebts = 0;
+            for(int i=0;i<Users.Count;i++)
+            {
+                if(Users[i].Account<=0)
+                    usersdebts += Math.Abs(Users[i].Account);
+                else
+                    usersdebts -= Users[i].Account ;
+            }
+            return usersdebts;
+        }
+
+        public static List<string> ListOfDestination()
+        {
+            List<string> listofdestination = new List<string>();
+            for(int i=0;i<Users.Count;i++)
+            {
+                for(int j=0;j<Users[i].Tickets.Count;j++)
+                {
+                    bool flag = true;
+                    for(int k=0;k<listofdestination.Count;k++)
+                    {
+                        if (listofdestination[k] == Users[i].Tickets[j].Flight.Destination)
+                            flag = false;
+                    }
+                    if (flag)
+                        listofdestination.Add(Users[i].Tickets[j].Flight.Destination);
+                }
+            }
+            return listofdestination;
         }
 
         /// <summary>
@@ -89,8 +152,35 @@ namespace ConsoleApp1
         /// <returns></returns>
         public static string FavouriteDestination()
         {
-            throw new NotImplementedException();
+            List<string> listofdestination = ListOfDestination();
+            List<int> countofdestination = new List<int>(listofdestination.Count);
+
+            for (int i = 0; i < Users.Count; i++)
+            {
+                for (int j = 0; j < Users[i].Tickets.Count; j++)
+                {
+                     for (int z = 0; z < listofdestination.Count; z++)
+                     {
+                        if (listofdestination[z] == Users[i].Tickets[j].Flight.Destination)
+                            countofdestination[z]++;
+                     }
+
+                }
+            }
+            int max = 0;
+            int max_ID = -1;
+            for(int i=0;i<countofdestination.Count;i++)
+            {
+                if(countofdestination[i]>=max)
+                {
+                    max = countofdestination[i];
+                    max_ID = i;
+                }
+            }
+            return listofdestination[max_ID];
+            
         }
+
 
     }
 }

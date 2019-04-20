@@ -9,7 +9,7 @@ namespace ConsoleApp1
     public class Ticket
     {
         public Flight Flight;
-
+        
         public double Price;
 
         public User Buyer;
