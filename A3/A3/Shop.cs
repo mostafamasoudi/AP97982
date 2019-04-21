@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace A3
 {
@@ -48,35 +45,35 @@ namespace A3
 
         public List<City> CitiesCustomersAreFrom()
         {
-            List<City> listofcity = new List<City>();
+            List<City> listOfCity = new List<City>();
             for(int i=0;i<Customers.Count;i++)
             {
                 bool flag = false;
-                for(int j=0;j<listofcity.Count;j++)
+                for(int j=0;j<listOfCity.Count;j++)
                 {
-                    if (Customers[i].City == listofcity[j])
+                    if (Customers[i].City == listOfCity[j])
                         flag = true;
                 }
                 if (!flag)
-                    listofcity.Add(Customers[i].City);
+                    listOfCity.Add(Customers[i].City);
             }
-            return listofcity;
+            return listOfCity;
         }
 
         public List<Customer> CustomersFromCity(City city)
         {
-            List<Customer> customersfromcity = new List<Customer>();
+            List<Customer> customersFromCity = new List<Customer>();
             for(int i=0;i<Customers.Count;i++)
             {
                 if (Customers[i].City == city)
-                    customersfromcity.Add(Customers[i]);
+                    customersFromCity.Add(Customers[i]);
             }
-            return customersfromcity;
+            return customersFromCity;
         }
 
         public List<Customer> CustomersWithMostOrders()
         {
-            List<Customer> customerswithmostorderds = new List<Customer>();
+            List<Customer> customersWithMostOrderds = new List<Customer>();
             int MaxOrder = 0;
             for(int i=0;i<Customers.Count;i++)
             {
@@ -86,9 +83,9 @@ namespace A3
             for (int i = 0; i < Customers.Count; i++)
             {
                 if (Customers[i].Orders.Count == MaxOrder)
-                    customerswithmostorderds.Add(Customers[i]); 
+                    customersWithMostOrderds.Add(Customers[i]); 
             }
-            return customerswithmostorderds;
+            return customersWithMostOrderds;
         }
     }
 }

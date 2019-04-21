@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace A3
 {
@@ -66,59 +63,60 @@ namespace A3
         }
         private List<Product> ListOfExistProduct()
         {
-            List<Product> listofproduct = new List<Product>();
-            for(int i=0;i<Orders.Count;i++)
+            List<Product> listOfProduct = new List<Product>();
+            foreach(var order in Orders)
             {
-                for(int j=0;j<Orders[i].Products.Count;j++)
+                foreach(var product in order.Products)
                 {
                     bool exist = false;
-                    for(int k=0;k<listofproduct.Count;k++)
+                    for(int k=0;k<listOfProduct.Count;k++)
+                    foreach(var listofproduct in listOfProduct)
                     {
-                        if (Orders[i].Products[j]== listofproduct[k])
+                        if (product== listofproduct)
                             exist = true;
                     }
                     if (exist == false)
-                        listofproduct.Add(Orders[i].Products[j]);
+                        listOfProduct.Add(product);
                 }
             }
-            return listofproduct;
+            return listOfProduct;
         }
 
         public Product MostOrderedProduct()
         {
-            List<Product> listofproduct = ListOfExistProduct();
-            int maxnumber = 0;
-            int IDofmaxproduct = -1;
-            for (int k = 0; k < listofproduct.Count; k++)
+            List<Product> listOfProduct = ListOfExistProduct();
+            int maxNumber = 0;
+            int idOfMaxProduct = -1;
+            for (int k = 0; k < listOfProduct.Count; k++)
             {
                 int count = 0;
                 for (int i = 0; i < Orders.Count; i++)
                 {
                     for (int j = 0; j < Orders[i].Products.Count; j++)
                     {
-                        if (listofproduct[k] == Orders[i].Products[j])
+                        if (listOfProduct[k] == Orders[i].Products[j])
                             count++;
                     }
                 }
-                if (count >= maxnumber)
+                if (count >= maxNumber)
                 {
-                    maxnumber = count;
-                    IDofmaxproduct = k;
+                    maxNumber = count;
+                    idOfMaxProduct = k;
                 }
             }
-            return listofproduct[IDofmaxproduct];
+            return listOfProduct[idOfMaxProduct];
             
         }
 
         public List<Order> UndeliveredOrders()
         {
-            List<Order> undelivered = new List<Order>();
+            List<Order> UnDelivered = new List<Order>();
             for (int i = 0; i < Orders.Count; i++)
             {
                 if (!Orders[i].IsDelivered)
-                    undelivered.Add(Orders[i]);
+                    UnDelivered.Add(Orders[i]);
             }
-            return undelivered;
+            return UnDelivered;
         }
     }
 }

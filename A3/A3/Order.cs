@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace A3
 {
@@ -44,12 +41,12 @@ namespace A3
 
         public float CalculateTotalPrice()
         {
-            float totalprice = 0;
+            float totalPrice = 0;
             for(int i=0;i<Products.Count;i++)
             {
-                totalprice += Products[i].Price;
+                totalPrice += Products[i].Price;
             }
-            return totalprice;
+            return totalPrice;
         }
     }
 }

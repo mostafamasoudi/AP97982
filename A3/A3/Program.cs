@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace A3
 {
-    public class Program
+    public  class Program
     {
         public static void Main(string[] args)
         {
-            
-
         }
     }
 }
