@@ -8,6 +8,7 @@ namespace ConsoleApp1
 {
     public class Program
     {
+        
         public static void Main(string[] args)
         {
             //Users
@@ -56,5 +57,6 @@ namespace ConsoleApp1
 
             user1.DateFilteredTickets(new DateTime(year: 2019, month: 3, day: 28), new DateTime(year: 2019, month: 3, day: 18));
         }
+        
     }
 }
