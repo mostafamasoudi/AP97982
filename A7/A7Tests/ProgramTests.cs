@@ -57,7 +57,7 @@ namespace A7Tests
         }
         
 
-        /*
+        
         [TestMethod]
         public void Q5DabirTest3_Constructor()
         {
@@ -65,7 +65,7 @@ namespace A7Tests
             var dabir = CreateDabirInstance(null as Dabir, "47212121", "Ali", "http://img.co/Ali.jpg", Degree.Master, 10);
             
         }
-        */
+        
 
         
         [TestMethod]
