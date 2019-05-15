@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,7 +24,7 @@ namespace A9
                     if(_Input==null)
                     {
                         string a = null;
-                        int length = a.Length;
+                        Console.WriteLine(a.Length);
                     }
                     else
                     {
@@ -45,8 +46,7 @@ namespace A9
 
                     if (value == null)
                     {
-                        string a = null;
-                        int length = a.Length;
+                        Console.WriteLine(value.Length); 
                     }
                     else
                     {
@@ -74,7 +74,7 @@ namespace A9
                 if (causeExceptionInConstructor)
                 {
                     string a = null;
-                    int length = a.Length;
+                    Console.WriteLine(a.Length);
                 }
             }
             catch
@@ -92,10 +92,10 @@ namespace A9
                 this.FinallyBlockStringOut = "InTryBlock:";
                 if (keyword==null)
                 {
-                    this.FinallyBlockStringOut += ":Object reference not set to an instance of an object.";
+                    this.FinallyBlockStringOut += $":{new NullReferenceException().Message}";
                     if(this.DoNotThrow == false)
                     {
-                        int a = keyword.Length;
+                        Console.WriteLine(keyword.Length);
                     }
                         
                 }
@@ -122,19 +122,23 @@ namespace A9
             }
             this.FinallyBlockStringOut += ":EndOfMethod";
         }
-
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public void NestedMethods()
             => MethodA();
-        
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public void MethodA() 
             => MethodB();
-        
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public void MethodB()
             => MethodC();
-        
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public void MethodC()
             => MethodD();
-        
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public void MethodD()
            => throw new NotImplementedException();
         
