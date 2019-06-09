@@ -51,15 +51,7 @@ namespace A12
         
 
         public long AppsAboveXRatingCount(double x)
-        {
-            long count = 0;
-            Apps.ForEach(
-                d => {
-                    if (d.Rating >= x)
-                        count++;
-                });
-            return count;
-        }
+            => Apps.Where(d => d.Rating >= x).Count();
 
         public long RecentlyUpdatedCount(DateTime boundary)
             => Apps.Where(d => d.LastUpdate >= boundary)
@@ -112,6 +104,8 @@ namespace A12
             
             var maxValue = avgGroup.Aggregate((d1, d2) => d1.avg > d2.avg ? d1 : d2);
             var minValue = avgGroup.Aggregate((d1, d2) => d1.avg < d2.avg ? d1 : d2);
+            Console.WriteLine(maxValue);
+            Console.WriteLine(minValue);
             return Tuple.Create<string, string>(minValue.name, maxValue.name);
         }
 
