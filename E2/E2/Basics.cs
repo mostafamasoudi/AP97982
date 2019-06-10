@@ -59,23 +59,18 @@ namespace E2
         /// <returns></returns>
         public static int PIPrecision()
         {
-            
-            double h;
             int count = 0;
             double odd = 3;
             double num = 1;
             double o = -1;
-            Console.WriteLine(Math.Round(Math.PI, 10));
-            //num<=Math.Round(Math.PI,10)
-            while (count< 10372344)
+            do
             {
-                h = (1 / odd);
-                num += Math.Round(h * (o),10);
+                num += Math.Round(((1 / odd) * o),7);
                 odd += 2;
                 o *= -1;
                 count++;
-            }
-            Console.WriteLine(num*4);
+            } while (Math.Abs(Math.Round((num * 4), 7)- Math.Round(Math.PI, 7)) >= 0.0000003) ;
+                Console.WriteLine(num*4);
             return count;
         }
 
