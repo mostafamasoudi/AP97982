@@ -12,7 +12,7 @@
     {
         public PointState(Calculator calc) : base(calc) { }
 
-        //#1 لطفا!
+        //#1 لطفا! //
         public override IState EnterZeroDigit()
         {
             this.Calc.Display += '0';

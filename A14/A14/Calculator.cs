@@ -24,7 +24,7 @@ namespace A14
                 ['*'] = (x, y) => x * y,
                 ['^'] = (x, y) => Math.Pow(x, y)
             };
-
+        
         public void PrintDisplay()
         {
             this.ClearScreen();
@@ -37,6 +37,13 @@ namespace A14
         public IState State { get; protected set; }
         public Action ClearScreen { get; }
 
+        /// <summary>
+        /// با این متد مقدار عدد اول ذخیره میشود 
+        /// سپس اگر عملگریی توسط کاربر وارد شده باشد با استفاده از دیکشنری که تعریف کردیم
+        /// مقدار اول و مقدار دوم که در متغیر 
+        /// Display
+        /// وجود دارد را روی عملگر اعمال میکند
+        /// </summary>
         public void Evalute()
         {
             Accumulation = PendingOperator.HasValue ? 

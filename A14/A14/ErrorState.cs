@@ -13,7 +13,7 @@
         public override IState EnterZeroDigit() => Reset();
         public override IState EnterOperator(char c) => Reset();
         public override IState EnterPoint() => Reset();
-
+        
         public IState Reset()
         {
             this.Calc.Clear();
