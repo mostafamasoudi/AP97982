@@ -100,7 +100,7 @@ namespace A13Tests
                 watcher.Register(notify);
                 watcher.Unregister(notify); 
                 File.WriteAllText(fileName, "کپ‌ها رو میگیرن");
-                Thread.Sleep(20);
+                Thread.Sleep(1000);
                 Assert.AreEqual(false, bChanged);
             }
             File.Delete(fileName);

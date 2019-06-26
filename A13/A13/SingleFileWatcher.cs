@@ -35,8 +35,8 @@ namespace A13
 
         public void Unregister(Action notify)
         {
-            NewAction -= notify;
             Watcher.Changed -= registering;
+            NewAction -= notify;
         }
     }
 }
