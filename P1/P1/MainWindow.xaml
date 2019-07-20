@@ -1,0 +1,87 @@
+﻿<Window x:Class="P1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:P1"
+        mc:Ignorable="d"
+        Title="Math Analyzer" Height="450" Width="821" Activated="Window_Activated">
+    <Canvas x:Name="MainCanvas" >
+        <TabControl Height="385" Width="557" Canvas.Left="10" Canvas.Top="10">
+            <TabItem x:Name="Item1" Header=" Draw diagram">
+                <StackPanel Background="#FFE5E5E5">
+                    <StackPanel x:Name="Draw_Clear" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="551">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="B_Draw" Margin="5,5,5,5" Grid.Column="0" Content="Draw" Click="B_Draw_Click" />
+                            <Button x:Name="Diagram_Clear" Margin="5,5,5,5" Grid.Column="1" Content="Clear" Click="Diagram_Clear_Click" />
+                        </Grid>
+                    </StackPanel>
+                    <Grid x:Name="DrawingGrid" Height="260" Width="545" Margin="5,5,0,2" Background="White" ShowGridLines="True" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Min y=" Margin="5" />
+                        <TextBox x:Name="Min_y" Grid.Column="1" Margin="5,0,5,0" />
+                        <TextBlock Grid.Column="2" Text="Max y=" Margin="5"/>
+                        <TextBox x:Name="Max_y" Grid.Column="3" Margin="5,0,5,0"/>
+                        <TextBlock Grid.Column="4" Text="Min x=" Margin="5"/>
+                        <TextBox x:Name="Min_x" Grid.Column="5" Margin="5,0,5,0" />
+                        <TextBlock Grid.Column="6" Text="Max x=" Margin="5" />
+                        <TextBox x:Name="Max_x" Grid.Column="7" Margin="5,0,5,0"/>
+
+                    </Grid>
+                    <Grid Margin="5,10,5,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="15*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="f_x_" Text="f(x) =" Grid.Column="0"/>
+                        <TextBox x:Name="function" Height="20" Grid.Column="1"/>
+                    </Grid>
+
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="Item2" Header="Equations">
+                <Grid x:Name="TabContent" Margin="5,5,5,5" Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition Height="6*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="Calculate" Grid.Column="0" Content="Calculate" Margin="5,3,5,3" Click="Calculate_Click"/>
+                        <Button x:Name="Clear" Grid.Column="1" Content="Clear" Margin="5,3,5,3" Click="Clear_Click"/>
+                    </Grid>
+                    <TextBox x:Name="Input_Equation" Grid.Row="1"/>
+                    <TextBlock x:Name="Answer_Equation" Grid.Row="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Item3" Header="Fourier Series" >
+                <Grid Background="#FFE5E5E5" />
+            </TabItem>
+        </TabControl>
+
+        <Canvas x:Name="CanvasFrame" Height="190" Canvas.Left="592" Canvas.Top="10" Width="190" Margin="0,0,0,0" >
+
+            <Ellipse x:Name="Frame" Fill="LightSkyBlue" Height="190"  Stroke="Black" StrokeThickness="2" Width="190" Opacity="0.3" />
+
+        </Canvas>
+
+    </Canvas>
+</Window>
