@@ -7,10 +7,10 @@ Instractor: [Sauleh Eetemadi](http://sauleh.github.io/)
 
 # Assignments
 ## HW3 (Files and String methods)
-  + [Document](https://github.com/mostafamasoudi/AP97982/blob/master/A1/HW3.fa.pdf)
-  + [Solution](https://github.com/mostafamasoudi/AP97982/blob/master/A1)
+  + [Document](https://github.com/mostafamasoudi/AP97982/blob/master/A1S1/HW3.fa.pdf)
+  + [Solution](https://github.com/mostafamasoudi/AP97982/blob/master/A1S1)
 ## HW4 (Understanding a few notes in C#)
-  + [Document](https://github.com/mostafamasoudi/AP97982/blob/master/A2/HW3.fa.pdf)
+  + [Document](https://github.com/mostafamasoudi/AP97982/blob/master/A2/HW4.fa.pdf)
   + [Solution](https://github.com/mostafamasoudi/AP97982/blob/master/A2/A2)
 ## HW5 (Class and Objects)
   + [Document](https://github.com/mostafamasoudi/AP97982/blob/master/A3/HW5.fa.pdf)
@@ -47,11 +47,9 @@ Instractor: [Sauleh Eetemadi](http://sauleh.github.io/)
 + E1
   + [Document](https://github.com/mostafamasoudi/AP97982/blob/master/E1/E1.fa.pdf)
   + [Solution](https://github.com/mostafamasoudi/AP97982/blob/master/E1/E1)
-+ E1B
-  + [Document](https://github.com/mostafamasoudi/AP97982/blob/master/E1B/E1B.fa.pdf)
-  + [Solution](https://github.com/mostafamasoudi/AP97982/blob/master/E1B/E1B)
+
 + E2
-  + [Document](https://github.com/mostafamasoudi/AP97982/blob/master/E2/E2.fa.pdf)
+  + [Document](https://github.com/mostafamasoudi/AP97982/blob/master/E2/E2-C.fa.pdf)
   + [Solution](https://github.com/mostafamasoudi/AP97982/blob/master/E2/E2)
 
 # Project
